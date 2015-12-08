@@ -37,6 +37,14 @@ namespace FormationUnitTest
             Assert.AreEqual(1, b.Authors.Count);
         }
 
+        [TestMethod]
+        public void Author2Test()
+        {
+            Book b = new Book { Id = 1, Title = "Un titre", Category = Category.Roman };
+            b.Authors.Add(new Author { Id = 1, Name = "Toto" });
+            Assert.AreEqual(1, b.Authors.Count);
+        }
+
 
     }
 }
