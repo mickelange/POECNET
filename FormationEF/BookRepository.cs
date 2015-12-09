@@ -47,8 +47,8 @@ namespace FormationEF
         {
             Entities.SaveChanges();
         }
-
-        public IEnumerable<Book> GetByPrice(decimal price)
+        // price a une valeur par défaut : MaxValue --> on récupère donc tous les livres.
+        public IEnumerable<Book> GetByPrice(decimal price= Decimal.MaxValue)
         {
             IEnumerable<Book> l = GetByLambda(book =>book.Price<= price);
             return l;

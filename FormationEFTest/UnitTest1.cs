@@ -9,7 +9,7 @@ namespace FormationEFTest
     [TestClass]
     public class UnitTest1
     {
-        /* [TestMethod]
+         [TestMethod]
          public void EFTest()
          {
              FormationEntities entities = new FormationEntities();
@@ -51,7 +51,7 @@ namespace FormationEFTest
              Func<Book, bool> f = Book => Book.Title.ToUpper().Contains(".NET");
              ie2 = entities.Books.Where(f);
              //entities.set<Book>() <=> entities.Books
-         }*/
+         }
 
         [TestMethod]
         public void BookRepositoryGetAllTest()
@@ -59,6 +59,9 @@ namespace FormationEFTest
             BookRepository bookRepo = new BookRepository();
             IEnumerable<Book> bookList = bookRepo.GetAll();
             Assert.AreEqual(2, bookList.Count());
+           // string s = "toto";
+           // s.ToUpperFirstLetter
+ 
         }
 
         [TestMethod]
@@ -100,7 +103,10 @@ namespace FormationEFTest
             BookRepository bookRepo = new BookRepository();
             IEnumerable<Book> bookList = bookRepo.GetByTitle("java");
             Assert.AreEqual(1, bookList.Count());
+
+           // bookRepo.GetByPrice(price: 10); --> onpeut passer les parametre dans le désordre en noment les parametres
         }
+
 
     }
 }
